@@ -44,8 +44,10 @@ namespace Zavrsna_aplikacija
         string registracija, ime, serijski_broj;
         int duzina, tezina, godina_registracije;
         char[] vez = new char[2];
+        string slikaPath;
+        Vlasnik vlasnik;
 
-        public Vozilo(string registracija, string ime, string serijski_broj, int duzina, int tezina, int godina_registracije, char[] vez)
+        public Vozilo(string registracija, string ime, string serijski_broj, int duzina, int tezina, int godina_registracije, char[] vez, Vlasnik vlasnik)
         {
             this.registracija = registracija;
             this.ime = ime;
@@ -54,14 +56,16 @@ namespace Zavrsna_aplikacija
             this.tezina = tezina;
             this.godina_registracije = godina_registracije;
             this.vez = vez;
+            this.vlasnik = vlasnik;
         }
-
         public string Registracija { get => registracija; set => registracija = value; }
         public string Ime { get => ime; set => ime = value; }
         public string SerijskiBroj { get => serijski_broj; set => serijski_broj = value; }
+        public string SlikaPath { get => slikaPath; set => slikaPath = value; }
         public int Duzina { get => duzina; set => duzina = value; }
         public int Tezina { get => tezina; set => tezina = value; }
         public int GodinaRegistracije {  get => godina_registracije; set => godina_registracije = value; }
+        public Vlasnik Vlasnik { get => vlasnik; set => vlasnik = value; }
 
         class Brod
         {
@@ -73,6 +77,7 @@ namespace Zavrsna_aplikacija
             }
 
             public string TipBroda { get => tipBroda; set => tipBroda = value; }
+
         }
 
         class PomocnaVozila
