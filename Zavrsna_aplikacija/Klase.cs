@@ -41,7 +41,7 @@ namespace Zavrsna_aplikacija
 
     class Vozilo
     {
-        string registracija, ime, serijski_broj;
+        string registracija, ime, serijski_broj, drzavaRegistracije;
         int duzina, tezina, godina_registracije;
         char[] vez = new char[2];
         string slikaPath;

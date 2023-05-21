@@ -30,18 +30,18 @@
         {
             this.btnSlika = new System.Windows.Forms.Button();
             this.pnlBarka = new System.Windows.Forms.Panel();
-            this.datGodReg = new System.Windows.Forms.DateTimePicker();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.txtSB = new System.Windows.Forms.TextBox();
-            this.txtImeV = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtRegistracija = new System.Windows.Forms.TextBox();
+            this.datGodReg = new System.Windows.Forms.DateTimePicker();
+            this.txtDuzina = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtImeV = new System.Windows.Forms.TextBox();
+            this.txtSB = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pnlBarka.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnSlika
@@ -64,6 +64,31 @@
             this.pnlBarka.Size = new System.Drawing.Size(1448, 992);
             this.pnlBarka.TabIndex = 1;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtRegistracija);
+            this.groupBox1.Controls.Add(this.datGodReg);
+            this.groupBox1.Controls.Add(this.txtDuzina);
+            this.groupBox1.Controls.Add(this.textBox5);
+            this.groupBox1.Controls.Add(this.txtImeV);
+            this.groupBox1.Controls.Add(this.txtSB);
+            this.groupBox1.Location = new System.Drawing.Point(581, 26);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(616, 234);
+            this.groupBox1.TabIndex = 8;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Podaci o vozilu";
+            // 
+            // txtRegistracija
+            // 
+            this.txtRegistracija.Location = new System.Drawing.Point(6, 50);
+            this.txtRegistracija.Name = "txtRegistracija";
+            this.txtRegistracija.Size = new System.Drawing.Size(264, 31);
+            this.txtRegistracija.TabIndex = 2;
+            this.txtRegistracija.Text = "Registracija";
+            this.txtRegistracija.GotFocus += new System.EventHandler(this.txtRegistracija_Focused);
+            this.txtRegistracija.LostFocus += new System.EventHandler(this.txtRegistracija_UnFocused);
+            // 
             // datGodReg
             // 
             this.datGodReg.CustomFormat = "yyyy";
@@ -73,6 +98,16 @@
             this.datGodReg.Size = new System.Drawing.Size(264, 31);
             this.datGodReg.TabIndex = 7;
             // 
+            // txtDuzina
+            // 
+            this.txtDuzina.Location = new System.Drawing.Point(328, 50);
+            this.txtDuzina.Name = "txtDuzina";
+            this.txtDuzina.Size = new System.Drawing.Size(264, 31);
+            this.txtDuzina.TabIndex = 5;
+            this.txtDuzina.Text = "Duzina";
+            this.txtDuzina.GotFocus += new System.EventHandler(this.txtDuzina_Focused);
+            this.txtDuzina.LostFocus += new System.EventHandler(this.txtDuzina_UnFocused);
+            // 
             // textBox5
             // 
             this.textBox5.Location = new System.Drawing.Point(328, 109);
@@ -80,23 +115,6 @@
             this.textBox5.Size = new System.Drawing.Size(264, 31);
             this.textBox5.TabIndex = 6;
             this.textBox5.Text = "Tezina";
-            this.textBox5.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(328, 50);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(264, 31);
-            this.textBox4.TabIndex = 5;
-            this.textBox4.Text = "Duzina";
-            // 
-            // txtSB
-            // 
-            this.txtSB.Location = new System.Drawing.Point(6, 166);
-            this.txtSB.Name = "txtSB";
-            this.txtSB.Size = new System.Drawing.Size(264, 31);
-            this.txtSB.TabIndex = 4;
-            this.txtSB.Text = "Serijski broj vozila";
             // 
             // txtImeV
             // 
@@ -106,14 +124,13 @@
             this.txtImeV.TabIndex = 3;
             this.txtImeV.Text = "Ime vozila";
             // 
-            // txtRegistracija
+            // txtSB
             // 
-            this.txtRegistracija.Location = new System.Drawing.Point(6, 50);
-            this.txtRegistracija.Name = "txtRegistracija";
-            this.txtRegistracija.Size = new System.Drawing.Size(264, 31);
-            this.txtRegistracija.TabIndex = 2;
-            this.txtRegistracija.Text = "Registracija";
-            this.txtRegistracija.Click += new System.EventHandler(this.txtRegistracija_Clicked);
+            this.txtSB.Location = new System.Drawing.Point(6, 166);
+            this.txtSB.Name = "txtSB";
+            this.txtSB.Size = new System.Drawing.Size(264, 31);
+            this.txtSB.TabIndex = 4;
+            this.txtSB.Text = "Serijski broj vozila";
             // 
             // pictureBox1
             // 
@@ -129,21 +146,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.txtRegistracija);
-            this.groupBox1.Controls.Add(this.datGodReg);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.txtImeV);
-            this.groupBox1.Controls.Add(this.txtSB);
-            this.groupBox1.Location = new System.Drawing.Point(581, 26);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(616, 234);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Podaci o vozilu";
-            // 
             // NoviVez
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -153,9 +155,9 @@
             this.Name = "NoviVez";
             this.Text = "Novi vez";
             this.pnlBarka.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,7 +169,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDuzina;
         private System.Windows.Forms.TextBox txtSB;
         private System.Windows.Forms.TextBox txtImeV;
         private System.Windows.Forms.TextBox txtRegistracija;

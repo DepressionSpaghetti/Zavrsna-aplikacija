@@ -28,15 +28,26 @@ namespace Zavrsna_aplikacija
                 btnSlika.Hide();
             }
         }
-
-        private void txtRegistracija_Clicked(object sender, EventArgs e)
+        private void txtRegistracija_UnFocused(object sender, EventArgs e)
         {
-            txtRegistracija.Clear();
+            if(txtRegistracija.Text == "") txtRegistracija.Text = "Registracija";
         }
 
-        private void textBox5_TextChanged(object sender, EventArgs e)
+        private void txtRegistracija_Focused(object sender, EventArgs e)
         {
+            if(txtRegistracija.Text == "Registracija" || txtRegistracija.Text == "") 
+                txtRegistracija.Clear();
+        }
 
+        private void txtDuzina_Focused(object sender, EventArgs e)
+        {
+            if (txtDuzina.Text == "Duzina" || txtDuzina.Text == "")
+                txtDuzina.Clear();
+        }
+
+        private void txtDuzina_UnFocused(object sender, EventArgs e)
+        {
+            if (txtDuzina.Text == "") txtDuzina.Text = "Duzina";
         }
     }
 }
