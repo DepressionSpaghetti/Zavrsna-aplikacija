@@ -17,6 +17,7 @@ namespace Zavrsna_aplikacija
         public NoviVez()
         {
             InitializeComponent();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -28,6 +29,9 @@ namespace Zavrsna_aplikacija
                 btnSlika.Hide();
             }
         }
+
+        //text box focus control
+        #region
         private void txtRegistracija_UnFocused(object sender, EventArgs e)
         {
             if(txtRegistracija.Text == "") txtRegistracija.Text = "Registracija";
@@ -49,5 +53,84 @@ namespace Zavrsna_aplikacija
         {
             if (txtDuzina.Text == "") txtDuzina.Text = "Duzina";
         }
+
+        private void txtImeP_Focused(object sender, EventArgs e)
+        {
+            if (txtImeP.Text == "Ime plovila" || txtImeP.Text == "")
+                txtImeP.Clear();
+        }
+
+        private void txtImeP_UnFocused(object sender, EventArgs e)
+        {
+            if (txtImeP.Text == "") txtImeP.Text = "Ime plovila";
+        }
+
+        private void txtTezina_Focused(object sender, EventArgs e)
+        {
+            if (txtTezina.Text == "Tezina" || txtTezina.Text == "")
+                txtTezina.Clear();
+        }
+
+        private void txtTezina_UnFocused(object sender, EventArgs e)
+        {
+            if (txtTezina.Text == "") txtTezina.Text = "Tezina";
+        }
+
+        private void txtSB_Focused(object sender, EventArgs e)
+        {
+            if (txtSB.Text == "Serijski broj plovila" || txtSB.Text == "")
+                txtSB.Clear();
+        }
+
+        private void txtSB_UnFocused(object sender, EventArgs e)
+        {
+            if (txtSB.Text == "") txtSB.Text = "Serijski broj plovila";
+        }
+
+        private void txtIme_Focused(object sender, EventArgs e)
+        {
+            if (txtIme.Text == "Ime" || txtIme.Text == "")
+                txtIme.Clear();
+        }
+
+        private void txtIme_UnFocused(object sender, EventArgs e)
+        {
+            if (txtIme.Text == "") txtIme.Text = "Ime";
+        }
+
+        private void txtPrezime_Focused(object sender, EventArgs e)
+        {
+            if (txtPrezime.Text == "Prezime" || txtPrezime.Text == "")
+                txtPrezime.Clear();
+        }
+
+        private void txtPrezime_UnFocused(object sender, EventArgs e)
+        {
+            if (txtPrezime.Text == "") txtPrezime.Text = "Prezime";
+        }
+
+        private void txtMob_Focused(object sender, EventArgs e)
+        {
+            if (txtMob.Text == "Broj mobitela" || txtMob.Text == "")
+                txtMob.Clear();
+        }
+
+        private void txtMob_UnFocused(object sender, EventArgs e)
+        {
+            if (txtMob.Text == "") txtMob.Text = "Broj mobitela";
+        }
+
+        private void txtEmail_Focused(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "Email" || txtEmail.Text == "")
+                txtEmail.Clear();
+        }
+
+        private void txtEmail_UnFocused(object sender, EventArgs e)
+        {
+            if (txtEmail.Text == "") txtEmail.Text = "Email";
+        }
+        #endregion
+
     }
 }

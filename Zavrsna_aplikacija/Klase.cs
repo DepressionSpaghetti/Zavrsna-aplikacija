@@ -17,16 +17,14 @@ namespace Zavrsna_aplikacija
     {
         string ime, prezime, email;
         long broj_mobitela;
-        int starost;
         char[] brevet = new char[2];
 
-        public Vlasnik(string ime, string prezime, string email, long broj_mobitela, int starost, char[] brevet)
+        public Vlasnik(string ime, string prezime, string email, long broj_mobitela, char[] brevet)
         {
             this.ime = ime;
             this.prezime = prezime;
             this.email = email;
             this.broj_mobitela = broj_mobitela;
-            this.starost = starost;
             this.brevet = brevet;
         }
 
@@ -34,7 +32,6 @@ namespace Zavrsna_aplikacija
         public string Prezime { get => prezime; set => prezime = value; }
         public string Email { get => email; set => email = value; }
         public long BrojMobitela { get => broj_mobitela; set => broj_mobitela = value; }
-        public int Starost { get => starost; set => starost = value; }
         public char[] Brevet { get => brevet; set => brevet = value; }
 
     }
