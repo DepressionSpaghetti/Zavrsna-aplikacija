@@ -6,20 +6,14 @@ using System.Threading.Tasks;
 
 namespace Zavrsna_aplikacija
 {
-    internal class Klase
-    {
-        List<Vlasnik> ListaVlasnika = new List<Vlasnik>();
-        List<Vozilo> ListaVozila = new List<Vozilo>();
-
-    }
 
     class Vlasnik
     {
         string ime, prezime, email;
         long broj_mobitela;
-        char[] brevet = new char[2];
+        char brevet;
 
-        public Vlasnik(string ime, string prezime, string email, long broj_mobitela, char[] brevet)
+        public Vlasnik(string ime, string prezime, string email, long broj_mobitela, char brevet)
         {
             this.ime = ime;
             this.prezime = prezime;
@@ -32,11 +26,11 @@ namespace Zavrsna_aplikacija
         public string Prezime { get => prezime; set => prezime = value; }
         public string Email { get => email; set => email = value; }
         public long BrojMobitela { get => broj_mobitela; set => broj_mobitela = value; }
-        public char[] Brevet { get => brevet; set => brevet = value; }
+        public char Brevet { get => brevet; set => brevet = value; }
 
     }
 
-    class Vozilo
+    class Plovilo
     {
         string registracija, ime, serijski_broj, drzavaRegistracije;
         int duzina, tezina, godina_registracije;
@@ -44,7 +38,7 @@ namespace Zavrsna_aplikacija
         string slikaPath;
         Vlasnik vlasnik;
 
-        public Vozilo(string registracija, string ime, string serijski_broj, int duzina, int tezina, int godina_registracije, char[] vez, Vlasnik vlasnik)
+        public Plovilo(string registracija, string ime, string serijski_broj, int duzina, int tezina, int godina_registracije, string drzavaRegistracije, char[] vez, Vlasnik vlasnik)
         {
             this.registracija = registracija;
             this.ime = ime;
@@ -52,12 +46,14 @@ namespace Zavrsna_aplikacija
             this.duzina = duzina;
             this.tezina = tezina;
             this.godina_registracije = godina_registracije;
+            this.drzavaRegistracije = drzavaRegistracije;
             this.vez = vez;
             this.vlasnik = vlasnik;
         }
         public string Registracija { get => registracija; set => registracija = value; }
         public string Ime { get => ime; set => ime = value; }
         public string SerijskiBroj { get => serijski_broj; set => serijski_broj = value; }
+        public string DrzavaRegistracije { get => drzavaRegistracije; set => drzavaRegistracije = value; }
         public string SlikaPath { get => slikaPath; set => slikaPath = value; }
         public int Duzina { get => duzina; set => duzina = value; }
         public int Tezina { get => tezina; set => tezina = value; }

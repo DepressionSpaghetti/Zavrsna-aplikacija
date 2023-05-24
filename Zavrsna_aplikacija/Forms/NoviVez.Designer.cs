@@ -35,6 +35,7 @@ namespace Zavrsna_aplikacija
             this.btnPrekid = new System.Windows.Forms.Button();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.txtDrzReg = new System.Windows.Forms.TextBox();
             this.datGodReg = new System.Windows.Forms.DateTimePicker();
             this.txtRegistracija = new System.Windows.Forms.TextBox();
             this.txtSB = new System.Windows.Forms.TextBox();
@@ -49,6 +50,7 @@ namespace Zavrsna_aplikacija
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.btnSlika = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtVez = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -62,10 +64,10 @@ namespace Zavrsna_aplikacija
             // panel1
             // 
             this.panel1.Controls.Add(this.btnPrekid);
+            this.panel1.Controls.Add(this.btnSlika);
             this.panel1.Controls.Add(this.btnDodaj);
             this.panel1.Controls.Add(this.groupBox3);
             this.panel1.Controls.Add(this.groupBox2);
-            this.panel1.Controls.Add(this.btnSlika);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
@@ -80,6 +82,7 @@ namespace Zavrsna_aplikacija
             this.btnPrekid.TabIndex = 12;
             this.btnPrekid.Text = "Ponisti";
             this.btnPrekid.UseVisualStyleBackColor = true;
+            this.btnPrekid.Click += new System.EventHandler(this.btnPrekid_Click);
             // 
             // btnDodaj
             // 
@@ -89,9 +92,12 @@ namespace Zavrsna_aplikacija
             this.btnDodaj.TabIndex = 11;
             this.btnDodaj.Text = "Dodaj vez";
             this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.txtVez);
+            this.groupBox3.Controls.Add(this.txtDrzReg);
             this.groupBox3.Controls.Add(this.datGodReg);
             this.groupBox3.Controls.Add(this.txtRegistracija);
             this.groupBox3.Controls.Add(this.txtSB);
@@ -102,16 +108,27 @@ namespace Zavrsna_aplikacija
             this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox3.Size = new System.Drawing.Size(319, 119);
+            this.groupBox3.Size = new System.Drawing.Size(319, 140);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Podaci o plovilu";
+            // 
+            // txtDrzReg
+            // 
+            this.txtDrzReg.Location = new System.Drawing.Point(164, 73);
+            this.txtDrzReg.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDrzReg.Name = "txtDrzReg";
+            this.txtDrzReg.Size = new System.Drawing.Size(134, 20);
+            this.txtDrzReg.TabIndex = 8;
+            this.txtDrzReg.Text = "Drzava registracije";
+            this.txtDrzReg.GotFocus += new System.EventHandler(this.txtDrzReg_Focused);
+            this.txtDrzReg.LostFocus += new System.EventHandler(this.txtDrzReg_UnFocused);
             // 
             // datGodReg
             // 
             this.datGodReg.CustomFormat = "yyyy";
             this.datGodReg.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datGodReg.Location = new System.Drawing.Point(169, 85);
+            this.datGodReg.Location = new System.Drawing.Point(164, 99);
             this.datGodReg.Margin = new System.Windows.Forms.Padding(2);
             this.datGodReg.Name = "datGodReg";
             this.datGodReg.Size = new System.Drawing.Size(134, 20);
@@ -120,7 +137,7 @@ namespace Zavrsna_aplikacija
             // 
             // txtRegistracija
             // 
-            this.txtRegistracija.Location = new System.Drawing.Point(9, 29);
+            this.txtRegistracija.Location = new System.Drawing.Point(4, 17);
             this.txtRegistracija.Margin = new System.Windows.Forms.Padding(2);
             this.txtRegistracija.Name = "txtRegistracija";
             this.txtRegistracija.Size = new System.Drawing.Size(134, 20);
@@ -131,7 +148,7 @@ namespace Zavrsna_aplikacija
             // 
             // txtSB
             // 
-            this.txtSB.Location = new System.Drawing.Point(9, 85);
+            this.txtSB.Location = new System.Drawing.Point(4, 73);
             this.txtSB.Margin = new System.Windows.Forms.Padding(2);
             this.txtSB.Name = "txtSB";
             this.txtSB.Size = new System.Drawing.Size(134, 20);
@@ -142,7 +159,7 @@ namespace Zavrsna_aplikacija
             // 
             // txtTezina
             // 
-            this.txtTezina.Location = new System.Drawing.Point(169, 57);
+            this.txtTezina.Location = new System.Drawing.Point(164, 45);
             this.txtTezina.Margin = new System.Windows.Forms.Padding(2);
             this.txtTezina.Name = "txtTezina";
             this.txtTezina.Size = new System.Drawing.Size(134, 20);
@@ -153,7 +170,7 @@ namespace Zavrsna_aplikacija
             // 
             // txtDuzina
             // 
-            this.txtDuzina.Location = new System.Drawing.Point(169, 29);
+            this.txtDuzina.Location = new System.Drawing.Point(164, 17);
             this.txtDuzina.Margin = new System.Windows.Forms.Padding(2);
             this.txtDuzina.Name = "txtDuzina";
             this.txtDuzina.Size = new System.Drawing.Size(134, 20);
@@ -164,7 +181,7 @@ namespace Zavrsna_aplikacija
             // 
             // txtImeP
             // 
-            this.txtImeP.Location = new System.Drawing.Point(9, 57);
+            this.txtImeP.Location = new System.Drawing.Point(4, 45);
             this.txtImeP.Margin = new System.Windows.Forms.Padding(2);
             this.txtImeP.Name = "txtImeP";
             this.txtImeP.Size = new System.Drawing.Size(134, 20);
@@ -180,11 +197,11 @@ namespace Zavrsna_aplikacija
             this.groupBox2.Controls.Add(this.txtMob);
             this.groupBox2.Controls.Add(this.txtIme);
             this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Location = new System.Drawing.Point(321, 150);
+            this.groupBox2.Location = new System.Drawing.Point(321, 172);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(319, 129);
+            this.groupBox2.Size = new System.Drawing.Size(319, 107);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o vlasniku";
@@ -200,17 +217,18 @@ namespace Zavrsna_aplikacija
             "C",
             "Zapovjednik jahte A",
             "Zapovjednik jahte B"});
-            this.cboBrevet.Location = new System.Drawing.Point(99, 89);
+            this.cboBrevet.Location = new System.Drawing.Point(99, 73);
             this.cboBrevet.Name = "cboBrevet";
             this.cboBrevet.Size = new System.Drawing.Size(121, 21);
             this.cboBrevet.TabIndex = 13;
+            this.cboBrevet.SelectedIndex = 0;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(169, 33);
+            this.txtPrezime.Location = new System.Drawing.Point(169, 17);
             this.txtPrezime.Margin = new System.Windows.Forms.Padding(2);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(139, 20);
+            this.txtPrezime.Size = new System.Drawing.Size(129, 20);
             this.txtPrezime.TabIndex = 6;
             this.txtPrezime.Text = "Prezime";
             this.txtPrezime.GotFocus += new System.EventHandler(this.txtPrezime_Focused);
@@ -218,10 +236,10 @@ namespace Zavrsna_aplikacija
             // 
             // txtMob
             // 
-            this.txtMob.Location = new System.Drawing.Point(4, 61);
+            this.txtMob.Location = new System.Drawing.Point(4, 45);
             this.txtMob.Margin = new System.Windows.Forms.Padding(2);
             this.txtMob.Name = "txtMob";
-            this.txtMob.Size = new System.Drawing.Size(139, 20);
+            this.txtMob.Size = new System.Drawing.Size(134, 20);
             this.txtMob.TabIndex = 5;
             this.txtMob.Text = "Broj mobitela";
             this.txtMob.GotFocus += new System.EventHandler(this.txtMob_Focused);
@@ -229,10 +247,10 @@ namespace Zavrsna_aplikacija
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(4, 33);
+            this.txtIme.Location = new System.Drawing.Point(4, 17);
             this.txtIme.Margin = new System.Windows.Forms.Padding(2);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(139, 20);
+            this.txtIme.Size = new System.Drawing.Size(134, 20);
             this.txtIme.TabIndex = 2;
             this.txtIme.Text = "Ime";
             this.txtIme.GotFocus += new System.EventHandler(this.txtIme_Focused);
@@ -240,10 +258,10 @@ namespace Zavrsna_aplikacija
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(169, 61);
+            this.txtEmail.Location = new System.Drawing.Point(169, 45);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(139, 20);
+            this.txtEmail.Size = new System.Drawing.Size(129, 20);
             this.txtEmail.TabIndex = 4;
             this.txtEmail.Text = "Email";
             this.txtEmail.GotFocus += new System.EventHandler(this.txtEmail_Focused);
@@ -251,7 +269,7 @@ namespace Zavrsna_aplikacija
             // 
             // btnSlika
             // 
-            this.btnSlika.Location = new System.Drawing.Point(97, 133);
+            this.btnSlika.Location = new System.Drawing.Point(120, 131);
             this.btnSlika.Margin = new System.Windows.Forms.Padding(2);
             this.btnSlika.Name = "btnSlika";
             this.btnSlika.Size = new System.Drawing.Size(78, 37);
@@ -263,13 +281,24 @@ namespace Zavrsna_aplikacija
             // pictureBox1
             // 
             this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(20, 28);
+            this.pictureBox1.Location = new System.Drawing.Point(32, 28);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(251, 251);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            // 
+            // txtVez
+            // 
+            this.txtVez.Location = new System.Drawing.Point(4, 102);
+            this.txtVez.Margin = new System.Windows.Forms.Padding(2);
+            this.txtVez.Name = "txtVez";
+            this.txtVez.Size = new System.Drawing.Size(134, 20);
+            this.txtVez.TabIndex = 9;
+            this.txtVez.Text = "Vez";
+            this.txtVez.GotFocus += new System.EventHandler(this.txtVez_Focused);
+            this.txtVez.LostFocus += new System.EventHandler(this.txtVez_UnFocused);
             // 
             // NoviVez
             // 
@@ -312,5 +341,7 @@ namespace Zavrsna_aplikacija
         private System.Windows.Forms.Button btnPrekid;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.ComboBox cboBrevet;
+        private TextBox txtDrzReg;
+        private TextBox txtVez;
     }
 }

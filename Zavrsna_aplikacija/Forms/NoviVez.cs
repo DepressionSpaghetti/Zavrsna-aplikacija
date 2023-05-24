@@ -13,21 +13,13 @@ namespace Zavrsna_aplikacija
 {
     public partial class NoviVez : Form
     {
+        List<Vlasnik> ListaVlasnika = new List<Vlasnik>();
+        List<Plovilo> ListaVozila = new List<Plovilo>();
 
         public NoviVez()
         {
             InitializeComponent();
 
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if(openFileDialog1.ShowDialog()==DialogResult.OK)
-            {
-                pictureBox1.ImageLocation = openFileDialog1.FileName;
-                //add filepath to string here
-                btnSlika.Hide();
-            }
         }
 
         //text box focus control
@@ -130,7 +122,78 @@ namespace Zavrsna_aplikacija
         {
             if (txtEmail.Text == "") txtEmail.Text = "Email";
         }
+
+        private void txtDrzReg_Focused(object sender, EventArgs e)
+        {
+            if (txtDrzReg.Text == "Drzava registracije" || txtDrzReg.Text == "")
+                txtDrzReg.Clear();
+        }
+
+        private void txtDrzReg_UnFocused(object sender, EventArgs e)
+        {
+            if (txtDrzReg.Text == "") txtDrzReg.Text = "Drzava registracije";
+        }
+
+        private void txtVez_Focused(object sender, EventArgs e)
+        {
+            if (txtVez.Text == "Vez" || txtVez.Text == "")
+                txtVez.Clear();
+        }
+
+        private void txtVez_UnFocused(object sender, EventArgs e)
+        {
+            if (txtVez.Text == "") txtVez.Text = "Vez";
+        }
         #endregion
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
+                
+                btnSlika.Hide();
+            }
+        }
+
+        private void btnPrekid_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnDodaj_Click(object sender, EventArgs e)
+        {
+            //Plovilo
+            string registracija = txtDrzReg.Text;
+            string ime = txtImeP.Text;
+            string serijskiBroj = txtSB.Text;
+            string drzavaRegistracije = txtDrzReg.Text;
+            int duzina = Convert.ToInt32(txtDuzina.Text);
+            int tezina = Convert.ToInt32(txtTezina.Text);
+            int godinaReg = Convert.ToInt32(datGodReg.Value);
+            char[] vez = txtVez.Text.ToCharArray();
+
+            //Vlasnik
+            string imeVlasnik = txtIme.Text;
+            string prezime = txtPrezime.Text;
+            string email = txtEmail.Text;
+            long brojMob = Convert.ToInt64(txtMob.Text);
+            char brevet = Convert.ToChar(cboBrevet.SelectedItem.ToString());
+
+            //Deklaracija klasa
+            Vlasnik vlasnik = new Vlasnik(imeVlasnik, prezime, email, brojMob, brevet);
+            Plovilo plovilo = new Plovilo(registracija, ime, serijskiBroj, duzina, tezina, godinaReg, 
+                drzavaRegistracije, vez, vlasnik);
+            plovilo.SlikaPath = openFileDialog1.FileName;
+
+            //Dodavanje u liste
+            
+
+
+
+
+
+            this.Close();
+        }
     }
 }
