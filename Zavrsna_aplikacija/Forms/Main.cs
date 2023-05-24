@@ -20,10 +20,9 @@ namespace Zavrsna_aplikacija
         private void dodajNoviVezToolStripMenuItem_Click(object sender, EventArgs e)
         {
             NoviVez noviVez = new NoviVez();
-
             if(noviVez.ShowDialog(Owner) == DialogResult.OK)
             {
-
+                
             }
         }
     }

@@ -8,13 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Zavrsna_aplikacija.Properties;
+using System.IO;
+using CsvHelper;
+using System.Globalization;
 
 namespace Zavrsna_aplikacija
 {
     public partial class NoviVez : Form
     {
+        List<Plovilo> ListaPlovila = new List<Plovilo>();
         List<Vlasnik> ListaVlasnika = new List<Vlasnik>();
-        List<Plovilo> ListaVozila = new List<Plovilo>();
 
         public NoviVez()
         {
@@ -163,6 +166,8 @@ namespace Zavrsna_aplikacija
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            Random rnd = new Random();
+
             //Plovilo
             string registracija = txtDrzReg.Text;
             string ime = txtImeP.Text;
@@ -170,7 +175,7 @@ namespace Zavrsna_aplikacija
             string drzavaRegistracije = txtDrzReg.Text;
             int duzina = Convert.ToInt32(txtDuzina.Text);
             int tezina = Convert.ToInt32(txtTezina.Text);
-            int godinaReg = Convert.ToInt32(datGodReg.Value);
+            int godinaReg = Convert.ToInt32(datGodReg.Value.Year.ToString());
             char[] vez = txtVez.Text.ToCharArray();
 
             //Vlasnik
@@ -181,18 +186,33 @@ namespace Zavrsna_aplikacija
             char brevet = Convert.ToChar(cboBrevet.SelectedItem.ToString());
 
             //Deklaracija klasa
-            Vlasnik vlasnik = new Vlasnik(imeVlasnik, prezime, email, brojMob, brevet);
+            Vlasnik vlasnik = new Vlasnik(imeVlasnik, prezime, email, brojMob, brevet, rnd.Next());
             Plovilo plovilo = new Plovilo(registracija, ime, serijskiBroj, duzina, tezina, godinaReg, 
-                drzavaRegistracije, vez, vlasnik);
-            plovilo.SlikaPath = openFileDialog1.FileName;
+                drzavaRegistracije, vez, vlasnik.IDnum);
 
-            //Dodavanje u liste
-            
+            //Dodavanje slike u resource file
+            string endFilePath = @"resources\" + ime + Path.GetExtension(openFileDialog1.FileName);
+            File.Copy(openFileDialog1.FileName, endFilePath);
+            plovilo.SlikaPath = endFilePath;
+
+            //upis u csv
+            ListaPlovila.Add(plovilo);
+            ListaVlasnika.Add(vlasnik);
+            using (var writerPlovila = new StreamWriter(@"db\plovila.csv"))
+            using (var csvPlovila = new CsvWriter(writerPlovila, CultureInfo.InvariantCulture))
+            {
+                csvPlovila.WriteRecords(ListaPlovila);
+                csvPlovila.NextRecord();
+            }
+            using (var writerVlasnici = new StreamWriter(@"db\vlasnici.csv"))
+            using (var csvVlasnici = new CsvWriter(writerVlasnici, CultureInfo.InvariantCulture))
+            {
+                csvVlasnici.WriteRecords(ListaVlasnika);
+                csvVlasnici.NextRecord();
+            }
 
 
-
-
-
+            DialogResult = DialogResult.OK;
             this.Close();
         }
     }
