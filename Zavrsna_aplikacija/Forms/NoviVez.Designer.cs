@@ -247,6 +247,7 @@ namespace Zavrsna_aplikacija
             this.cboBrevet.Name = "cboBrevet";
             this.cboBrevet.Size = new System.Drawing.Size(238, 33);
             this.cboBrevet.TabIndex = 13;
+            this.cboBrevet.SelectedIndex = 0;
             // 
             // txtPrezime
             // 
