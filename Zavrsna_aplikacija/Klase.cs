@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Zavrsna_aplikacija
 {
 
-    public class Vlasnik
+    class Vlasnik
     {
         long ID;
         string ime, prezime, email;
@@ -33,7 +33,7 @@ namespace Zavrsna_aplikacija
 
     }
 
-    public class Plovilo
+    class Plovilo
     {
         string registracija, ime, serijski_broj, drzavaRegistracije;
         int duzina, tezina, godina_registracije;

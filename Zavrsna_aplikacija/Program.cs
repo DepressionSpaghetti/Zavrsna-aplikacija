@@ -16,7 +16,7 @@ namespace Zavrsna_aplikacija
         [STAThread]
         static void Main()
         {
-            if(!Directory.Exists("database" )) Directory.CreateDirectory("database");
+            if(!Directory.Exists("db" )) Directory.CreateDirectory("db");
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Main());

@@ -224,22 +224,6 @@ namespace Zavrsna_aplikacija
             endFilePath = @"resources\" + ime + Path.GetExtension(openFileDialog1.FileName);
             File.Copy(openFileDialog1.FileName, endFilePath);
 
-            //upis u csv
-            /*ListaPlovila.Add(plovilo);
-            ListaVlasnika.Add(vlasnik);
-            using (var writerPlovila = new StreamWriter(@"db\plovila.csv"))
-            using (var csvPlovila = new CsvWriter(writerPlovila, CultureInfo.InvariantCulture))
-            {
-                csvPlovila.WriteRecords(ListaPlovila);
-                csvPlovila.NextRecord();
-            }
-            using (var writerVlasnici = new StreamWriter(@"db\vlasnici.csv"))
-            using (var csvVlasnici = new CsvWriter(writerVlasnici, CultureInfo.InvariantCulture))
-            {
-                csvVlasnici.WriteRecords(ListaVlasnika);
-                csvVlasnici.NextRecord();
-            }*/
-
 
             DialogResult = DialogResult.OK;
         }
