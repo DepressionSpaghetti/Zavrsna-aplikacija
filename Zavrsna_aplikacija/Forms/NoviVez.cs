@@ -17,6 +17,8 @@ namespace Zavrsna_aplikacija
 {
     public partial class NoviVez : Form
     {
+        bool exceptionFound = false;
+
         //Plovilo
         string registracija, ime, serijskiBroj, drzavaRegistracije;
         int duzina, tezina, godinaReg;
@@ -197,35 +199,50 @@ namespace Zavrsna_aplikacija
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            exceptionFound = false;
 
-            //Plovilo
-            registracija = txtDrzReg.Text;
-            ime = txtImeP.Text;
-            serijskiBroj = txtSB.Text;
-            drzavaRegistracije = txtDrzReg.Text;
-            duzina = Convert.ToInt32(txtDuzina.Text);
-            tezina = Convert.ToInt32(txtTezina.Text);
-            godinaReg = Convert.ToInt32(datGodReg.Value.Year.ToString());
-            vez = txtVez.Text.ToCharArray();
+            try
+            {
+                //Plovilo
+                registracija = txtDrzReg.Text;
+                ime = txtImeP.Text;
+                serijskiBroj = txtSB.Text;
+                drzavaRegistracije = txtDrzReg.Text;
+                duzina = Convert.ToInt32(txtDuzina.Text);
+                tezina = Convert.ToInt32(txtTezina.Text);
+                godinaReg = Convert.ToInt32(datGodReg.Value.Year.ToString());
+                vez = txtVez.Text.ToCharArray();
 
-
-
-            //Vlasnik
-            imeVlasnik = txtIme.Text;
-            prezime = txtPrezime.Text;
-            email = txtEmail.Text;
-            brojMob = Convert.ToInt64(txtMob.Text);
-            brevet = Convert.ToChar(cboBrevet.SelectedItem.ToString());
-
-            //Deklaracija klasa
-
+                //Vlasnik
+                imeVlasnik = txtIme.Text;
+                prezime = txtPrezime.Text;
+                email = txtEmail.Text;
+                brojMob = Convert.ToInt64(txtMob.Text);
+                brevet = Convert.ToChar(cboBrevet.SelectedItem.ToString());
+            }
+            catch(Exception ex) 
+            {
+                MessageBox.Show("Ispunite sve podatke", "Nepotpuni podatci", 
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                exceptionFound = true; 
+            }
 
             //Dodavanje slike u resource file
-            endFilePath = @"resources\" + ime + Path.GetExtension(openFileDialog1.FileName);
-            File.Copy(openFileDialog1.FileName, endFilePath);
+            if(exceptionFound != true)
+            {
+                try
+                {
+                    endFilePath = @"resources\" + ime + Path.GetExtension(openFileDialog1.FileName);
+                    File.Copy(openFileDialog1.FileName, endFilePath);
+                }
+                catch (FileNotFoundException ex)
+                {
+                    MessageBox.Show("Dodajte sliku", "Nema slike", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    exceptionFound = true;
+                }
+            }
 
-
-            DialogResult = DialogResult.OK;
+            if(exceptionFound == false) DialogResult = DialogResult.OK;
         }
     }
 }

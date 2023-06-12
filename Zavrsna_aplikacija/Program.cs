@@ -16,7 +16,7 @@ namespace Zavrsna_aplikacija
         [STAThread]
         static void Main()
         {
-            if(!Directory.Exists("db" )) Directory.CreateDirectory("db");
+            if (!Directory.Exists("db" )) Directory.CreateDirectory("db");
             if (!File.Exists(@"db\vlasnici.csv")) File.Create(@"db\vlasnici.csv");
             if (!File.Exists(@"db\plovila.csv")) File.Create(@"db\plovila.csv");
             Application.EnableVisualStyles();
