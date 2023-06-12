@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CsvHelper.Configuration;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -63,29 +64,34 @@ namespace Zavrsna_aplikacija
         public int GodinaRegistracije {  get => godina_registracije; set => godina_registracije = value; }
         public long Vlasnik { get => vlasnikID; }
 
-        class Brod
+    }
+
+    sealed class VlasnikMap : ClassMap<Vlasnik>
+    {
+        public VlasnikMap() 
         {
-            string tipBroda;
-
-            public Brod(string tipBroda)
-            {
-                this.tipBroda = tipBroda;
-            }
-
-            public string TipBroda { get => tipBroda; set => tipBroda = value; }
-
+            Map(m => m.Ime).Name("Ime");
+            Map(m => m.Prezime).Name("Prezime");
+            Map(m => m.Email).Name("Email");
+            Map(m => m.BrojMobitela).Name("BrojMobitela");
+            Map(m => m.Brevet).Name("Brevet");
+            Map(m => m.IDnum).Name("IDnum");
         }
+    }
 
-        class PomocnaVozila
+    sealed class PloviloMap : ClassMap<Plovilo>
+    {
+        public PloviloMap()
         {
-            string tipVozila;
-
-            public PomocnaVozila(string tipVozila)
-            {
-                this.tipVozila = tipVozila;
-            }
-
-            public string TipVozila { get => tipVozila; set => tipVozila = value; }
+            Map(m => m.Registracija).Name("Registracija");
+            Map(m => m.Ime).Name("Ime");
+            Map(m => m.SerijskiBroj).Name("SerijskiBroj");
+            Map(m => m.DrzavaRegistracije).Name("DrzavaRegistracije");
+            Map(m => m.SlikaPath).Name("SlikaPath");
+            Map(m => m.Duzina).Name("Duzina");
+            Map(m => m.Tezina).Name("Tezina");
+            Map(m => m.GodinaRegistracije).Name("GodinaRegistracije");
+            Map(m => m.Vlasnik).Name("Vlasnik");
         }
     }
 }

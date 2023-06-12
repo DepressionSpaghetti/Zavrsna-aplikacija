@@ -133,7 +133,7 @@ namespace Zavrsna_aplikacija
             space = 234;
         }
 
-        private void StartupControls()
+        private void StartupControls(Plovilo p, Vlasnik v)
         {
             if (ListaPlovila.Count == 1)
             {
@@ -144,89 +144,83 @@ namespace Zavrsna_aplikacija
             if (ListaPlovila.Count == 1) i = 0;
             else i = ListaPlovila.Count - 1;
 
+            grpDetNew = new GroupBox();
+            picBoatNew = new PictureBox();
+            lblImePlovilaNew = new Label();
+            lblImePlovVariableNew = new Label();
+            lblRegistracijaNew = new Label();
+            lblRegVariableNew = new Label();
+            lblImeVlasnikaNew = new Label();
+            lblImeVlasVariableNew = new Label();
+            grpDetNew.SuspendLayout();
 
-            foreach (Plovilo p in ListaPlovila)
-            {
-                grpDetNew = new GroupBox();
-                picBoatNew = new PictureBox();
-                lblImePlovilaNew = new Label();
-                lblImePlovVariableNew = new Label();
-                lblRegistracijaNew = new Label();
-                lblRegVariableNew = new Label();
-                lblImeVlasnikaNew = new Label();
-                lblImeVlasVariableNew = new Label();
-                grpDetNew.SuspendLayout();
+            ImeVlasnika = null;
+            if (v.IDnum == p.Vlasnik) ImeVlasnika = v.Ime;
+            
 
-                ImeVlasnika = null;
-                foreach (Vlasnik v in ListaVlasnika)
-                {
-                    if (v.IDnum == p.Vlasnik) ImeVlasnika = v.Ime;
-                }
+            //groupBox
+            grpDetNew.Name = "grpDet" + i;
+            grpDetNew.Location = new System.Drawing.Point(12, 47 + space);
+            grpDetNew.Size = new System.Drawing.Size(617, 211);
+            grpDetNew.TabStop = false;
+            grpDetNew.Controls.Add(picBoatNew);
+            grpDetNew.Controls.Add(lblImePlovilaNew);
+            grpDetNew.Controls.Add(lblImePlovVariableNew);
+            grpDetNew.Controls.Add(lblRegistracijaNew);
+            grpDetNew.Controls.Add(lblRegVariableNew);
+            grpDetNew.Controls.Add(lblImeVlasnikaNew);
+            grpDetNew.Controls.Add(lblImeVlasVariableNew);
+            //PictureBox
+            picBoatNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            picBoatNew.Location = new System.Drawing.Point(6, 19);
+            picBoatNew.Name = "picBoat" + i;
+            picBoatNew.Size = new System.Drawing.Size(182, 176);
+            picBoatNew.SizeMode = PictureBoxSizeMode.Zoom;
+            picBoatNew.TabStop = false;
+            picBoatNew.ImageLocation = p.SlikaPath;
+            picBoatNew.ErrorImage = global::Zavrsna_aplikacija.Properties.Resources.coconut;
+            //Label Ime plovila
+            lblImePlovilaNew.Location = new System.Drawing.Point(270, 35);
+            lblImePlovilaNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblImePlovilaNew.Name = "lblImePlovila" + i;
+            lblImePlovilaNew.Size = new System.Drawing.Size(60, 13);
+            lblImePlovilaNew.Text = "Ime plovila:";
+            //Label Ime plovila variable
+            lblImePlovVariableNew.Location = new System.Drawing.Point(415, 35);
+            lblImePlovVariableNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblImePlovVariableNew.Name = "lblImePlovVariable" + i;
+            lblImePlovVariableNew.AutoSize = true;
+            lblImePlovVariableNew.Text = p.Ime;
+            //Label registracija
+            lblRegistracijaNew.Location = new System.Drawing.Point(270, 90);
+            lblRegistracijaNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblRegistracijaNew.Name = "lblRegistracija" + i;
+            lblRegistracijaNew.Size = new System.Drawing.Size(98, 13);
+            lblRegistracijaNew.Text = "Registracija plovila:";
+            //Label registracija variable
+            lblRegVariableNew.Location = new System.Drawing.Point(415, 90);
+            lblRegVariableNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblRegVariableNew.Name = "lblRegVariable" + i;
+            lblRegVariableNew.AutoSize = true;
+            lblRegVariableNew.Text = p.Registracija;
+            //Label Ime vlasnika
+            lblImeVlasnikaNew.Location = new System.Drawing.Point(270, 143);
+            lblImeVlasnikaNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblImeVlasnikaNew.Name = "lblImeVlasnika" + i;
+            lblRegVariableNew.Size = new System.Drawing.Size(69, 13);
+            lblRegVariableNew.Text = "Ime vlasnika:";
+            //Label Ime vlasnika variable
+            lblImeVlasVariableNew.Location = new System.Drawing.Point(415, 143);
+            lblImeVlasVariableNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lblImeVlasVariableNew.Name = "lblImeVlasVariable" + i;
+            lblImeVlasVariableNew.AutoSize = true;
+            lblImeVlasVariableNew.Text = ImeVlasnika;
 
-                //groupBox
-                grpDetNew.Name = "grpDet" + i;
-                grpDetNew.Location = new System.Drawing.Point(12, 47 + space);
-                grpDetNew.Size = new System.Drawing.Size(617, 211);
-                grpDetNew.TabStop = false;
-                grpDetNew.Controls.Add(picBoatNew);
-                grpDetNew.Controls.Add(lblImePlovilaNew);
-                grpDetNew.Controls.Add(lblImePlovVariableNew);
-                grpDetNew.Controls.Add(lblRegistracijaNew);
-                grpDetNew.Controls.Add(lblRegVariableNew);
-                grpDetNew.Controls.Add(lblImeVlasnikaNew);
-                grpDetNew.Controls.Add(lblImeVlasVariableNew);
-                //PictureBox
-                picBoatNew.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-                picBoatNew.Location = new System.Drawing.Point(6, 19);
-                picBoatNew.Name = "picBoat" + i;
-                picBoatNew.Size = new System.Drawing.Size(182, 176);
-                picBoatNew.SizeMode = PictureBoxSizeMode.Zoom;
-                picBoatNew.TabStop = false;
-                picBoatNew.ImageLocation = p.SlikaPath;
-                picBoatNew.ErrorImage = global::Zavrsna_aplikacija.Properties.Resources.coconut;
-                //Label Ime plovila
-                lblImePlovilaNew.Location = new System.Drawing.Point(270, 35);
-                lblImePlovilaNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                lblImePlovilaNew.Name = "lblImePlovila" + i;
-                lblImePlovilaNew.Size = new System.Drawing.Size(60, 13);
-                lblImePlovilaNew.Text = "Ime plovila:";
-                //Label Ime plovila variable
-                lblImePlovVariableNew.Location = new System.Drawing.Point(415, 35);
-                lblImePlovVariableNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                lblImePlovVariableNew.Name = "lblImePlovVariable" + i;
-                lblImePlovVariableNew.AutoSize = true;
-                lblImePlovVariableNew.Text = p.Ime;
-                //Label registracija
-                lblRegistracijaNew.Location = new System.Drawing.Point(270, 90);
-                lblRegistracijaNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                lblRegistracijaNew.Name = "lblRegistracija" + i;
-                lblRegistracijaNew.Size = new System.Drawing.Size(98, 13);
-                lblRegistracijaNew.Text = "Registracija plovila:";
-                //Label registracija variable
-                lblRegVariableNew.Location = new System.Drawing.Point(415, 90);
-                lblRegVariableNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                lblRegVariableNew.Name = "lblRegVariable" + i;
-                lblRegVariableNew.AutoSize = true;
-                lblRegVariableNew.Text = p.Registracija;
-                //Label Ime vlasnika
-                lblImeVlasnikaNew.Location = new System.Drawing.Point(270, 143);
-                lblImeVlasnikaNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                lblImeVlasnikaNew.Name = "lblImeVlasnika" + i;
-                lblRegVariableNew.Size = new System.Drawing.Size(69, 13);
-                lblRegVariableNew.Text = "Ime vlasnika:";
-                //Label Ime vlasnika variable
-                lblImeVlasVariableNew.Location = new System.Drawing.Point(415, 143);
-                lblImeVlasVariableNew.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-                lblImeVlasVariableNew.Name = "lblImeVlasVariable" + i;
-                lblImeVlasVariableNew.AutoSize = true;
-                lblImeVlasVariableNew.Text = ImeVlasnika;
-
-                this.Controls.Add(grpDetNew);
-                grpDetNew.ResumeLayout(false);
-                YofLastControl = grpDetNew.Location.Y;
-                i++;
-                space = 234;
-            }
+            this.Controls.Add(grpDetNew);
+            grpDetNew.ResumeLayout(false);
+            YofLastControl = grpDetNew.Location.Y;
+            i++;
+            space = 234;
         }
 
         private void dodajNoviVezToolStripMenuItem_Click(object sender, EventArgs e)
@@ -261,33 +255,42 @@ namespace Zavrsna_aplikacija
             var plovilaLength = new FileInfo(@"db\plovila.csv").Length;
             var vlasniciLength = new FileInfo(@"db\vlasnici.csv").Length;
 
-            if(plovilaLength != 0 && vlasniciLength != 0 && File.Exists(@"db\plovila.csv") && File.Exists(@"db\vlasnici.csv"))
+            if(plovilaLength > 99 && vlasniciLength > 43 && plovilaLength != 0 && vlasniciLength !=0
+                && File.Exists(@"db\plovila.csv") && File.Exists(@"db\vlasnici.csv"))
             {
                 try
                 {
                     using (var readerPlovila = new StreamReader(@"db\plovila.csv"))
                     using (var csvPlovilaRead = new CsvReader(readerPlovila, CultureInfo.InvariantCulture))
                     {
-                        
-                        for(int i = 0; i< csvPlovilaRead.GetRecords<Plovilo>().Count(); i++)
+                        csvPlovilaRead.Context.RegisterClassMap<PloviloMap>();
+
+                        var records = csvPlovilaRead.GetRecords<Plovilo>();
+                        foreach(var record in records)
                         {
-                            ListaPlovila.Add(csvPlovilaRead.GetRecord<Plovilo>());
-                            csvPlovilaRead.Read();
+                            ListaPlovila.Add(record);
                         }
+
                     }
                     using (var readerVlasnici = new StreamReader(@"db\vlasnici.csv"))
                     using (var csvVlasniciRead = new CsvReader(readerVlasnici, CultureInfo.InvariantCulture))
                     {
-                        for (int i = 0; i < csvVlasniciRead.GetRecords<Plovilo>().Count(); i++)
+                        csvVlasniciRead.Context.RegisterClassMap<VlasnikMap>();
+                        
+                        var records1 = csvVlasniciRead.GetRecords<Vlasnik>();
+                        foreach(var record1 in records1)
                         {
-                            ListaPlovila.Add(csvVlasniciRead.GetRecord<Plovilo>());
-                            csvVlasniciRead.Read();
+                            ListaVlasnika.Add(record1);
                         }
                     }
                 } catch (CsvHelperException exception) { } 
+            
+                foreach(Plovilo p in ListaPlovila)
+                {
+                    StartupControls(p, ListaVlasnika[ListaPlovila.IndexOf(p)]);
+                }
             }
 
-            StartupControls();
 
         }
 
