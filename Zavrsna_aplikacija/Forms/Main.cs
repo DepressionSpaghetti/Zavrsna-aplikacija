@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -260,29 +261,17 @@ namespace Zavrsna_aplikacija
             {
                 try
                 {
-                    using (var readerPlovila = new StreamReader(@"db\plovila.csv"))
-                    using (var csvPlovilaRead = new CsvReader(readerPlovila, CultureInfo.InvariantCulture))
+                    var linesPlov = File.ReadAllLines(@"db\plovila.csv");
+                    foreach (string item in linesPlov)
                     {
-                        csvPlovilaRead.Context.RegisterClassMap<PloviloMap>();
-
-                        var records = csvPlovilaRead.GetRecords<Plovilo>();
-                        foreach(var record in records)
-                        {
-                            ListaPlovila.Add(record);
-                        }
-
+                        var values = item.Split(',');
+                        ListaPlovila.Add(new Plovilo(values[0], values[1], values[2], int.Parse(values[3])
+                            , int.Parse(values[4]), int.Parse(values[5]), values[6], values[7].ToCharArray()
+                            , long.Parse(values[8])));
                     }
-                    using (var readerVlasnici = new StreamReader(@"db\vlasnici.csv"))
-                    using (var csvVlasniciRead = new CsvReader(readerVlasnici, CultureInfo.InvariantCulture))
-                    {
-                        csvVlasniciRead.Context.RegisterClassMap<VlasnikMap>();
-                        
-                        var records1 = csvVlasniciRead.GetRecords<Vlasnik>();
-                        foreach(var record1 in records1)
-                        {
-                            ListaVlasnika.Add(record1);
-                        }
-                    }
+
+                    var linesVlas = File.ReadAllLines(@"db\vlasnici.csv");
+                    
                 } catch (CsvHelperException exception) { } 
             
                 foreach(Plovilo p in ListaPlovila)
