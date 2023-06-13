@@ -20,9 +20,8 @@ namespace Zavrsna_aplikacija
         bool exceptionFound = false;
 
         //Plovilo
-        string registracija, ime, serijskiBroj, drzavaRegistracije;
+        string registracija, ime, serijskiBroj, drzavaRegistracije, vez;
         int duzina, tezina, godinaReg;
-        char[] vez = new char[10];
         
         public string Registracija { get => registracija; set => registracija = value; }
         public string Ime { get => ime; set => ime = value; }
@@ -31,7 +30,7 @@ namespace Zavrsna_aplikacija
         public int Duzina { get => duzina; set => duzina = value; }
         public int Tezina { get => tezina; set => tezina = value; }
         public int GodinaReg { get => godinaReg; set => godinaReg = value; }
-        public char[] Vez { get => vez; set => vez = value; }
+        public string Vez { get => vez; set => vez = value; }
 
         //Vlasnik
         string imeVlasnik, prezime, email;
@@ -204,14 +203,14 @@ namespace Zavrsna_aplikacija
             try
             {
                 //Plovilo
-                registracija = txtDrzReg.Text;
+                registracija = txtRegistracija.Text;
                 ime = txtImeP.Text;
                 serijskiBroj = txtSB.Text;
                 drzavaRegistracije = txtDrzReg.Text;
                 duzina = Convert.ToInt32(txtDuzina.Text);
                 tezina = Convert.ToInt32(txtTezina.Text);
                 godinaReg = Convert.ToInt32(datGodReg.Value.Year.ToString());
-                vez = txtVez.Text.ToCharArray();
+                vez = txtVez.Text;
 
                 //Vlasnik
                 imeVlasnik = txtIme.Text;

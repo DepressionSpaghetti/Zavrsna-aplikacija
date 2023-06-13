@@ -30,28 +30,32 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblBrMob = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.lblBrevet = new System.Windows.Forms.Label();
+            this.lblImePrezime = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtMob = new System.Windows.Forms.TextBox();
-            this.txtImePrezime = new System.Windows.Forms.TextBox();
-            this.txtBrevet = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblGodReg = new System.Windows.Forms.Label();
+            this.lblTezina = new System.Windows.Forms.Label();
+            this.lblDuzina = new System.Windows.Forms.Label();
+            this.lblSerBr = new System.Windows.Forms.Label();
+            this.lblImePlov = new System.Windows.Forms.Label();
+            this.lblRegistracija = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtRegistracija = new System.Windows.Forms.TextBox();
-            this.datGodReg = new System.Windows.Forms.DateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDuzina = new System.Windows.Forms.TextBox();
-            this.txtTezina = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtSB = new System.Windows.Forms.TextBox();
-            this.txtImeP = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblDrzava = new System.Windows.Forms.Label();
+            this.lblVez = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -70,15 +74,15 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblBrMob);
+            this.groupBox2.Controls.Add(this.lblEmail);
+            this.groupBox2.Controls.Add(this.lblBrevet);
+            this.groupBox2.Controls.Add(this.lblImePrezime);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.txtMob);
-            this.groupBox2.Controls.Add(this.txtImePrezime);
-            this.groupBox2.Controls.Add(this.txtBrevet);
-            this.groupBox2.Controls.Add(this.txtEmail);
-            this.groupBox2.Location = new System.Drawing.Point(316, 243);
+            this.groupBox2.Location = new System.Drawing.Point(316, 250);
             this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
@@ -86,6 +90,42 @@
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Podaci o vlasniku";
+            // 
+            // lblBrMob
+            // 
+            this.lblBrMob.AutoSize = true;
+            this.lblBrMob.Location = new System.Drawing.Point(168, 122);
+            this.lblBrMob.Name = "lblBrMob";
+            this.lblBrMob.Size = new System.Drawing.Size(29, 13);
+            this.lblBrMob.TabIndex = 23;
+            this.lblBrMob.Text = "lbl10";
+            // 
+            // lblEmail
+            // 
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(168, 89);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(23, 13);
+            this.lblEmail.TabIndex = 22;
+            this.lblEmail.Text = "lbl9";
+            // 
+            // lblBrevet
+            // 
+            this.lblBrevet.AutoSize = true;
+            this.lblBrevet.Location = new System.Drawing.Point(168, 60);
+            this.lblBrevet.Name = "lblBrevet";
+            this.lblBrevet.Size = new System.Drawing.Size(23, 13);
+            this.lblBrevet.TabIndex = 21;
+            this.lblBrevet.Text = "lbl8";
+            // 
+            // lblImePrezime
+            // 
+            this.lblImePrezime.AutoSize = true;
+            this.lblImePrezime.Location = new System.Drawing.Point(168, 32);
+            this.lblImePrezime.Name = "lblImePrezime";
+            this.lblImePrezime.Size = new System.Drawing.Size(23, 13);
+            this.lblImePrezime.TabIndex = 20;
+            this.lblImePrezime.Text = "lbl7";
             // 
             // label4
             // 
@@ -123,97 +163,100 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Ime i prezime:";
             // 
-            // txtMob
-            // 
-            this.txtMob.Location = new System.Drawing.Point(98, 115);
-            this.txtMob.Margin = new System.Windows.Forms.Padding(2);
-            this.txtMob.Name = "txtMob";
-            this.txtMob.Size = new System.Drawing.Size(188, 20);
-            this.txtMob.TabIndex = 5;
-            this.txtMob.Text = "Broj mobitela";
-            // 
-            // txtImePrezime
-            // 
-            this.txtImePrezime.Location = new System.Drawing.Point(98, 29);
-            this.txtImePrezime.Margin = new System.Windows.Forms.Padding(2);
-            this.txtImePrezime.Name = "txtImePrezime";
-            this.txtImePrezime.Size = new System.Drawing.Size(189, 20);
-            this.txtImePrezime.TabIndex = 2;
-            this.txtImePrezime.Text = "Ime Prezime";
-            // 
-            // txtBrevet
-            // 
-            this.txtBrevet.Location = new System.Drawing.Point(98, 57);
-            this.txtBrevet.Margin = new System.Windows.Forms.Padding(2);
-            this.txtBrevet.Name = "txtBrevet";
-            this.txtBrevet.Size = new System.Drawing.Size(189, 20);
-            this.txtBrevet.TabIndex = 3;
-            this.txtBrevet.Text = "Brevet";
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(98, 86);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(189, 20);
-            this.txtEmail.TabIndex = 4;
-            this.txtEmail.Text = "email";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.lblVez);
+            this.groupBox1.Controls.Add(this.lblDrzava);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.lblGodReg);
+            this.groupBox1.Controls.Add(this.lblTezina);
+            this.groupBox1.Controls.Add(this.lblDuzina);
+            this.groupBox1.Controls.Add(this.lblSerBr);
+            this.groupBox1.Controls.Add(this.lblImePlov);
+            this.groupBox1.Controls.Add(this.lblRegistracija);
             this.groupBox1.Controls.Add(this.label10);
-            this.groupBox1.Controls.Add(this.txtRegistracija);
-            this.groupBox1.Controls.Add(this.datGodReg);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.label8);
-            this.groupBox1.Controls.Add(this.txtDuzina);
-            this.groupBox1.Controls.Add(this.txtTezina);
             this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.txtSB);
-            this.groupBox1.Controls.Add(this.txtImeP);
             this.groupBox1.Location = new System.Drawing.Point(316, 12);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(307, 209);
+            this.groupBox1.Size = new System.Drawing.Size(307, 224);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Podaci o plovilu";
             // 
+            // lblGodReg
+            // 
+            this.lblGodReg.AutoSize = true;
+            this.lblGodReg.Location = new System.Drawing.Point(168, 144);
+            this.lblGodReg.Name = "lblGodReg";
+            this.lblGodReg.Size = new System.Drawing.Size(23, 13);
+            this.lblGodReg.TabIndex = 19;
+            this.lblGodReg.Text = "lbl6";
+            // 
+            // lblTezina
+            // 
+            this.lblTezina.AutoSize = true;
+            this.lblTezina.Location = new System.Drawing.Point(168, 120);
+            this.lblTezina.Name = "lblTezina";
+            this.lblTezina.Size = new System.Drawing.Size(23, 13);
+            this.lblTezina.TabIndex = 18;
+            this.lblTezina.Text = "lbl5";
+            // 
+            // lblDuzina
+            // 
+            this.lblDuzina.AutoSize = true;
+            this.lblDuzina.Location = new System.Drawing.Point(168, 96);
+            this.lblDuzina.Name = "lblDuzina";
+            this.lblDuzina.Size = new System.Drawing.Size(23, 13);
+            this.lblDuzina.TabIndex = 17;
+            this.lblDuzina.Text = "lbl4";
+            // 
+            // lblSerBr
+            // 
+            this.lblSerBr.AutoSize = true;
+            this.lblSerBr.Location = new System.Drawing.Point(168, 72);
+            this.lblSerBr.Name = "lblSerBr";
+            this.lblSerBr.Size = new System.Drawing.Size(23, 13);
+            this.lblSerBr.TabIndex = 16;
+            this.lblSerBr.Text = "lbl3";
+            // 
+            // lblImePlov
+            // 
+            this.lblImePlov.AutoSize = true;
+            this.lblImePlov.Location = new System.Drawing.Point(168, 48);
+            this.lblImePlov.Name = "lblImePlov";
+            this.lblImePlov.Size = new System.Drawing.Size(23, 13);
+            this.lblImePlov.TabIndex = 15;
+            this.lblImePlov.Text = "lbl2";
+            // 
+            // lblRegistracija
+            // 
+            this.lblRegistracija.AutoSize = true;
+            this.lblRegistracija.Location = new System.Drawing.Point(168, 24);
+            this.lblRegistracija.Name = "lblRegistracija";
+            this.lblRegistracija.Size = new System.Drawing.Size(23, 13);
+            this.lblRegistracija.TabIndex = 14;
+            this.lblRegistracija.Text = "lbl1";
+            // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(6, 176);
+            this.label10.Location = new System.Drawing.Point(6, 144);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(130, 13);
             this.label10.TabIndex = 13;
             this.label10.Text = "Godina registracije plovila:";
             // 
-            // txtRegistracija
-            // 
-            this.txtRegistracija.Location = new System.Drawing.Point(154, 25);
-            this.txtRegistracija.Margin = new System.Windows.Forms.Padding(2);
-            this.txtRegistracija.Name = "txtRegistracija";
-            this.txtRegistracija.Size = new System.Drawing.Size(134, 20);
-            this.txtRegistracija.TabIndex = 2;
-            this.txtRegistracija.Text = "Registracija";
-            // 
-            // datGodReg
-            // 
-            this.datGodReg.CustomFormat = "yyyy";
-            this.datGodReg.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.datGodReg.Location = new System.Drawing.Point(154, 176);
-            this.datGodReg.Margin = new System.Windows.Forms.Padding(2);
-            this.datGodReg.Name = "datGodReg";
-            this.datGodReg.Size = new System.Drawing.Size(134, 20);
-            this.datGodReg.TabIndex = 7;
-            // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(6, 150);
+            this.label9.Location = new System.Drawing.Point(6, 120);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(75, 13);
             this.label9.TabIndex = 12;
@@ -222,34 +265,16 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(6, 119);
+            this.label8.Location = new System.Drawing.Point(6, 96);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 13);
             this.label8.TabIndex = 11;
             this.label8.Text = "Duzina plovila:";
             // 
-            // txtDuzina
-            // 
-            this.txtDuzina.Location = new System.Drawing.Point(154, 116);
-            this.txtDuzina.Margin = new System.Windows.Forms.Padding(2);
-            this.txtDuzina.Name = "txtDuzina";
-            this.txtDuzina.Size = new System.Drawing.Size(134, 20);
-            this.txtDuzina.TabIndex = 5;
-            this.txtDuzina.Text = "Duzina";
-            // 
-            // txtTezina
-            // 
-            this.txtTezina.Location = new System.Drawing.Point(154, 147);
-            this.txtTezina.Margin = new System.Windows.Forms.Padding(2);
-            this.txtTezina.Name = "txtTezina";
-            this.txtTezina.Size = new System.Drawing.Size(134, 20);
-            this.txtTezina.TabIndex = 6;
-            this.txtTezina.Text = "Tezina";
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(6, 88);
+            this.label7.Location = new System.Drawing.Point(6, 72);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 13);
             this.label7.TabIndex = 10;
@@ -258,7 +283,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(6, 59);
+            this.label6.Location = new System.Drawing.Point(6, 48);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(60, 13);
             this.label6.TabIndex = 9;
@@ -267,37 +292,57 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 28);
+            this.label5.Location = new System.Drawing.Point(6, 24);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(65, 13);
             this.label5.TabIndex = 8;
             this.label5.Text = "Registracija:";
             // 
-            // txtSB
-            // 
-            this.txtSB.Location = new System.Drawing.Point(154, 85);
-            this.txtSB.Margin = new System.Windows.Forms.Padding(2);
-            this.txtSB.Name = "txtSB";
-            this.txtSB.Size = new System.Drawing.Size(134, 20);
-            this.txtSB.TabIndex = 4;
-            this.txtSB.Text = "Serijski broj plovila";
-            // 
-            // txtImeP
-            // 
-            this.txtImeP.Location = new System.Drawing.Point(154, 56);
-            this.txtImeP.Margin = new System.Windows.Forms.Padding(2);
-            this.txtImeP.Name = "txtImeP";
-            this.txtImeP.Size = new System.Drawing.Size(134, 20);
-            this.txtImeP.TabIndex = 3;
-            this.txtImeP.Text = "Ime plovila";
-            // 
             // pictureBox1
             // 
+            this.pictureBox1.ErrorImage = global::Zavrsna_aplikacija.Properties.Resources.coconut;
             this.pictureBox1.Location = new System.Drawing.Point(25, 84);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(251, 251);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(6, 168);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(130, 13);
+            this.label11.TabIndex = 20;
+            this.label11.Text = "Država registracije plovila:";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(6, 192);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(28, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Vez:";
+            // 
+            // lblDrzava
+            // 
+            this.lblDrzava.AutoSize = true;
+            this.lblDrzava.Location = new System.Drawing.Point(168, 168);
+            this.lblDrzava.Name = "lblDrzava";
+            this.lblDrzava.Size = new System.Drawing.Size(23, 13);
+            this.lblDrzava.TabIndex = 22;
+            this.lblDrzava.Text = "lbl7";
+            // 
+            // lblVez
+            // 
+            this.lblVez.AutoSize = true;
+            this.lblVez.Location = new System.Drawing.Point(168, 192);
+            this.lblVez.Name = "lblVez";
+            this.lblVez.Size = new System.Drawing.Size(23, 13);
+            this.lblVez.TabIndex = 23;
+            this.lblVez.Text = "lbl8";
             // 
             // Detalji
             // 
@@ -307,6 +352,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "Detalji";
             this.Text = "Detalji";
+            this.Load += new System.EventHandler(this.Detalji_Load);
             this.panel1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
@@ -322,26 +368,30 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox txtImePrezime;
-        private System.Windows.Forms.TextBox txtBrevet;
-        private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtRegistracija;
-        private System.Windows.Forms.DateTimePicker datGodReg;
-        private System.Windows.Forms.TextBox txtDuzina;
-        private System.Windows.Forms.TextBox txtTezina;
-        private System.Windows.Forms.TextBox txtImeP;
-        private System.Windows.Forms.TextBox txtSB;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtMob;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblBrMob;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.Label lblBrevet;
+        private System.Windows.Forms.Label lblImePrezime;
+        private System.Windows.Forms.Label lblGodReg;
+        private System.Windows.Forms.Label lblTezina;
+        private System.Windows.Forms.Label lblDuzina;
+        private System.Windows.Forms.Label lblSerBr;
+        private System.Windows.Forms.Label lblImePlov;
+        private System.Windows.Forms.Label lblRegistracija;
+        private System.Windows.Forms.Label lblVez;
+        private System.Windows.Forms.Label lblDrzava;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }

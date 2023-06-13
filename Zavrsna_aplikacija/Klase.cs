@@ -8,11 +8,10 @@ using System.Threading.Tasks;
 namespace Zavrsna_aplikacija
 {
 
-    class Vlasnik
+    public class Vlasnik
     {
-        long ID;
+        long ID, broj_mobitela;
         string ime, prezime, email;
-        long broj_mobitela;
         char brevet;
 
         public Vlasnik(string ime, string prezime, string email, long broj_mobitela, char brevet, long ID)
@@ -34,15 +33,14 @@ namespace Zavrsna_aplikacija
 
     }
 
-    class Plovilo
+    public class Plovilo
     {
-        string registracija, ime, serijski_broj, drzavaRegistracije;
+        string registracija, ime, serijski_broj, drzavaRegistracije, vez;
         int duzina, tezina, godina_registracije;
-        char[] vez = new char[2];
         string slikaPath;
         long vlasnikID;
 
-        public Plovilo(string registracija, string ime, string serijski_broj, int duzina, int tezina, int godina_registracije, string drzavaRegistracije, char[] vez, long vlasnikID)
+        public Plovilo(string registracija, string ime, string serijski_broj, int duzina, int tezina, int godina_registracije, string drzavaRegistracije, string vez, long vlasnikID)
         {
             this.registracija = registracija;
             this.ime = ime;
@@ -54,6 +52,7 @@ namespace Zavrsna_aplikacija
             this.vez = vez;
             this.vlasnikID = vlasnikID;
         }
+
         public string Registracija { get => registracija; set => registracija = value; }
         public string Ime { get => ime; set => ime = value; }
         public string SerijskiBroj { get => serijski_broj; set => serijski_broj = value; }
@@ -61,7 +60,8 @@ namespace Zavrsna_aplikacija
         public string SlikaPath { get => slikaPath; set => slikaPath = value; }
         public int Duzina { get => duzina; set => duzina = value; }
         public int Tezina { get => tezina; set => tezina = value; }
-        public int GodinaRegistracije {  get => godina_registracije; set => godina_registracije = value; }
+        public int GodinaRegistracije { get => godina_registracije; set => godina_registracije = value; }
+        public string Vez { get => vez; set => vez = value; }
         public long Vlasnik { get => vlasnikID; }
 
     }
